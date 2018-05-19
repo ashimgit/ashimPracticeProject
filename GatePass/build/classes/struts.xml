@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+ 	<package name="default" extends="struts-default">
+ 	
+ 		
+<!-- (1)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Login Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		
+		<action name="login" class="login.LoginAction" method="execute">
+		
+			<result name="success">/Home.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="failure">/index.jsp</result>
+		</action>
+		
+<!-- (1)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Login Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (2)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Category Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="AddCategory" class="category.CategoryAction" method="dummyLink">
+			<result name="success">/AddCategory.jsp</result>	
+			<result name="failure">/Home.jsp</result>	
+		</action>
+		
+		
+		<action name="Category*" class="category.CategoryAction" method="{1}">
+			<result name="success">/AddCategory.jsp</result>
+			<result name="input">/AddCategory.jsp</result>	
+			<result name="pdf" type="stream">
+				<param name="contentDisposition">attachment;filename="Category details"</param>
+    			<param name="contentType">application/pdf</param>
+    			<param name="inputName">inputStream</param>
+    			<param name="bufferSize">1024</param>
+			</result>				
+		</action>
+		
+				
+<!-- (2)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Category Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (3)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Cluster Manager Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="AddClusterManager" class="clustermanager.ClusterManagerAction" method="dummyLink">
+			<result name="success">/AddClusterManager.jsp</result>		
+		</action>
+		
+		<action name="ClusterManager*" class="clustermanager.ClusterManagerAction" method="{1}">
+			<result name="success">/AddClusterManager.jsp</result>
+			<result name="input">/AddClusterManager.jsp</result>								
+		</action>
+		
+		
+<!-- (3)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Cluster Manager Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (4)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  District Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+		
+		<action name="AddDistrict" class="district.DistrictAction" method="dummyLink">
+			<result name="success">/AddDistrict.jsp</result>
+			<result name="home">/Home.jsp</result>
+		</action>
+		
+		<action name="District*" class="district.DistrictAction" method="{1}">
+			<result name="success">/AddDistrict.jsp</result>	
+			<result name="input">/AddDistrict.jsp</result>			
+		</action>
+		
+<!-- (4)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  District Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->	
+		
+
+<!-- (5)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  GateKeeper Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="AddGateKeeper" class="gatekeeper.GateKeeperAction" method="dummyLink">
+			<result name="success">/AddGateKeeper.jsp</result>	
+			<result name="home">/Home.jsp</result>	
+		</action>
+		
+		<action name="gateKeeper*" class="gatekeeper.GateKeeperAction" method="{1}">
+			<result name="success">/AddGateKeeper.jsp</result>	
+			<result name="input">/AddGateKeeper.jsp</result>					
+		</action>
+		
+	
+<!-- (5)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  GateKeeper Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (6)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Purpose Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+		
+		<action name="AddPurpose" class="purpose.PurposeAction" method="dummyLink">
+			<result name="success">/AddPurpose.jsp</result>
+		</action>
+		
+		<action name="Purpose*" class="purpose.PurposeAction" method="{1}">
+			<result name="success">/AddPurpose.jsp</result>	
+			<result name="input">/AddPurpose.jsp</result>			
+		</action>
+		
+<!-- (6)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Purpose Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->	
+
+
+<!-- (7)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Service Provider Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+		
+		<action name="AddServiceProvider" class="serviceprovider.ServiceProviderAction" method="dummyLink">
+			<result name="success">/AddServiceProvider.jsp</result>
+			<result name="home">/Home.jsp</result>			
+		</action>
+		
+		<action name="ServiceProviderAddition" class="serviceprovider.ServiceProviderAction" method="serviceProviderAddition">
+			<result name="success">/AddServiceProvider.jsp</result>
+			<result name="input">/AddServiceProvider.jsp</result>
+		</action>
+		
+		<action name="ServiceProviderSearch" class="serviceprovider.ServiceProviderAction" method="serviceProviderSearch">
+			<result name="success">/AddServiceProvider.jsp</result>
+		</action>
+
+		
+<!-- (7)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Service Provider Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (8)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="AddSME" class="sme.SMEAction" method="dummyLink">
+			<result name="success">/AddSME.jsp</result>
+			<result name="home">/Home.jsp</result>		
+		</action>
+		
+		<action name="SME*" class="sme.SMEAction" method="{1}">
+			<result name="success">/AddSME.jsp</result>		
+			<result name="input">/AddSME.jsp</result>							
+		</action>
+			
+	
+<!-- (8)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  SME Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+
+		
+<!-- (9)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Type  Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+
+		<action name="AddSMEType" class="smetype.SMETypeAction" method="dummyLink">
+			<result name="success">/AddSMEType.jsp</result>	
+		</action>
+		
+		<action name="SType*" class="smetype.SMETypeAction" method="{1}">
+			<result name="success">/AddSMEType.jsp</result>		
+			<result name="input">/AddSMEType.jsp</result>				
+		</action>
+		
+		
+
+<!-- (9)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Type Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				
+
+
+<!-- (10)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ State Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+		
+		<action name="AddState" class="state.StateAction" method="dummyLink">
+			<result name="success">/AddState.jsp</result>
+		</action>
+		
+		<action name="State*" class="state.StateAction" method="{1}">
+			<result name="success">/AddState.jsp</result>	
+			<result name="input">/AddState.jsp</result>	
+		</action>
+		
+<!-- (10)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ State Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (11)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tower Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->	
+
+		<action name="AddTower" class="tower.TowerAction" method="dummyLink">
+			<result name="success">/AddTower.jsp</result>
+		</action>
+		
+		
+		<action name="Tower*" class="tower.TowerAction" method="{1}">
+			<result name="success">/AddTower.jsp</result>
+		</action>
+
+	
+
+<!-- (11)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tower Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->	
+
+
+<!-- (12)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ User Start ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="AddUser" class="user.UserAction" method="dummyLink">
+			<result name="success">/AddUser.jsp</result>
+		</action>
+		
+		<action name="User*" class="user.UserAction" method="{1}">
+			<result name="success">/AddUser.jsp</result>	
+			<result name="input">/AddUser.jsp</result>			
+		</action>
+		
+		
+<!-- (12)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ User Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->	
+
+		
+<!-- (13)~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Joining Approval Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="SMEJoiningApproval" class="approval.ApprovalAction" method="dummyLink">
+			<result name="success">/SMEJoiningApproval.jsp</result>		
+			<result name="home">/Home.jsp</result>				
+		</action>
+		
+		<action name="ApprovalSME" class="approval.ApprovalAction" method="approvalSME">
+			<result name="success">/SMEJoiningApproval.jsp</result>
+		</action>
+		
+		<action name="ApproveAllSME" class="approval.ApprovalAction" method="approvalAllSME">
+			<result name="success">/SMEJoiningApproval.jsp</result>
+		</action>
+		
+		
+<!-- (13)~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Joining Approval Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (14)~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Visit Approval Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="SMEVisitApproval" class="approval.ApprovalAction" method="SMEVisitApprovalList">
+			<result name="success">/SMEVisitApproval.jsp</result>
+			<result name="home">/Home.jsp</result>						
+		</action>
+		
+		<action name="SMEVisitConfirm" class="approval.ApprovalAction" method="SMEVisitApproval">
+			<result name="success">/SMEVisitApproval.jsp</result>
+		</action>
+		
+		<action name="SMEVisitConfirmall" class="approval.ApprovalAction" method="SMEVisitApprovalall">
+			<result name="success">/SMEVisitApproval.jsp</result>
+		</action>
+		
+<!-- (14)~~~~~~~~~~~~~~~~~~~~~~~~~~~ SME Visit Approval Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (15)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Scheduled SMS Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="ScheduleSMS" class="sms.SMSAction" method="execute">
+			<result name="link">/ScheduleSMS.jsp</result>			
+		</action>
+		
+		<action name="ScheduleSMSviamobile" class="sms.SMSAction" >
+			<result name="success">/msg.jsp</result>
+			<result name="notvalid">/msg.jsp</result>
+			<result name="input">/ScheduleSMS.jsp</result>	
+		</action>
+		
+		<action name="ScheduleSMSAddition" class="sms.SMSAction" method="ScheduleSMS">
+			<result name="success">/ScheduleSMS.jsp</result>	
+			<result name="notvalid">/ScheduleSMS.jsp</result>
+			<result name="input">/ScheduleSMS.jsp</result>	
+		</action>
+		
+<!-- (15)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Scheduled SMS Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (16)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Un-Scheduled SMS Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="UnscheduleSMS" class="sms.SMSAction" method="execute">
+			<result name="link">/UnscheduleSMS.jsp</result>			
+		</action>
+		
+		<action name="UnScheduleSMSviamobile" class="sms.SMSAction" >
+			<result name="success">/msg.jsp</result>
+			<result name="notvalid">/msg.jsp</result>
+			<result name="input">/UnscheduleSMS.jsp</result>	
+		</action>
+		
+		<action name="UnScheduleSMSAddition" class="sms.SMSAction" method="UnScheduleSMS">
+			<result name="success">/UnscheduleSMS.jsp</result>	
+			<result name="notvalid">/UnscheduleSMS.jsp</result>
+			<result name="input">/UnscheduleSMS.jsp</result>	
+		</action>
+		
+<!-- (16)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Un-Scheduled SMS Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (17)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cancel SMS Already Send Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="CancelSMS" class="sms.SMSAction" method="execute">
+			<result name="link">/CancelSMS.jsp</result>
+		</action>
+		
+		<action name="addcancelsms" class="sms.SMSAction" method="CancelSMS">
+			<result name="success">/Valid.jsp</result>
+			<result name="notvalid">/Invalid.jsp</result>
+		</action>
+		
+<!-- (17)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cancel SMS Already Send Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (18)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Visit Confirm SMS Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="addconfirmsms" class="sms.SMSAction" method="ConfirmSMS">
+			<result name="success">/Valid.jsp</result>
+			<result name="notvalid">/Invalid.jsp</result>
+		</action>
+		
+		<action name="ConfirmSMS" class="sms.SMSAction" method="execute">
+			<result name="link">/ConfirmSMS.jsp</result>
+		</action>
+		
+<!-- (18)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Send Visit Confirm SMS Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (19)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GatePass SMS Details Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="SMSSendReport" class="report.ReportAction" method="SMSSendReport">
+			<result name="link">/SMSSendList.jsp?flag=1</result>			
+		</action>
+		
+		<action name="MegaHuntSendSMS" class="report.ReportAction" method="megaHuntSendSMS">
+			<result name="success">/SMSSendList.jsp</result>			
+		</action>
+		
+		<action name="MegaHuntReport" class="report.ReportAction" method="megaHuntReport">
+			<result name="success" type="stream">
+    		<param name="inputName">inputStream</param>
+    		<param name="contentType">application/pdf</param>
+    		<param name="contentDisposition">attachment;filename="SendSMSReport.pdf"</param>
+    		<param name="bufferSize">1024</param></result>
+    		
+    		<result name="success1" type="stream">
+    		<param name="inputName">inputStream</param>
+    		<param name="contentType">application/vnd.ms-excel</param>
+    		<param name="contentDisposition">attachment;filename="SendSMSReport.xls"</param>
+    		<param name="bufferSize">1024</param></result>
+		</action>
+		
+		
+<!-- (19)~~~~~~~~~~~~~~~~~~~~~~~~~~~ GatePass SMS Details Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (20)~~~~~~~~~~~~~~~~~~~~~~ SME Visit Confirmation Details Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="SMEVisitApprovalList" class="report.ReportAction" method="SMEVisitApprovalList">
+			<result name="link">/SMEVisitApprovalList.jsp</result>			
+		</action>
+		
+		
+<!-- (20)~~~~~~~~~~~~~~~~~~~~~~ SME Visit Confirmation Details Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!-- (21)~~~~~~~~~~~~~~~~~~~~~~~~~~~ Check GatePass Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+		<action name="CheckGatePass" class="report.ReportAction" method="CheckGatePass">
+			<result name="link">/CheckGatePass.jsp</result>			
+		</action>
+		
+		<action name="CheckGatePass1" class="report.ReportAction" method="ValidatingGatePass">
+			<result name="success">/CheckGatePass.jsp</result>	
+			<result name="notvalid">/CheckGatePass.jsp</result>
+		</action>
+		
+		
+<!-- (21)~~~~~~~~~~~~~~~~~~~~~~~~~~~ Check GatePass Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (22)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Help Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="Help" class="help.HelpAction" method="execute">
+			<result name="link">/Help.jsp</result>			
+		</action>
+
+<!-- (22)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Help Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- (23)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Logout Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="Logout" class="logout.LogoutAction" method="execute">
+			<result name="success">/index.jsp</result>			
+		</action>
+
+<!-- (23)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Logout Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (24)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Upload Tower Excel Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="towerexcel" class="excel.UploadExcelAction" method="execute">
+			<result name="success">/UploadingExcel.jsp</result>			
+		</action>
+		
+		<action name="excelupload" class="excel.UploadExcelAction" method="uploadexcel">
+			<result name="success">/UploadingExcel.jsp</result>			
+		</action>
+
+<!-- (24)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Upload Tower Excel Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- (25)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Logout Starts   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<action name="additionalexcel" class="excel.UploadAdditionalExcelAction" method="execute">
+			<result name="success">/UploadingAdditionalExcel.jsp</result>			
+		</action>
+		
+		<action name="additionalexcelupload" class="excel.UploadAdditionalExcelAction" method="uploadadditionalexcel">
+			<result name="success">/UploadingAdditionalExcel.jsp</result>			
+		</action>
+<!-- (25)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Logout Ends   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	</package>
+</struts>

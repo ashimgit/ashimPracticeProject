@@ -1,0 +1,107 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-shadow: 1.5px;
+	background-image: url("../images/bg.jpg");
+	background-color: #ff9f40;
+	font: 12px Tahoma, Verdana, Arial, sans-serif;	
+	color: black; 
+	overflow: auto;
+	min-width: 400px;
+	
+}
+a:link, a:visited {
+color: #FFF;
+text-decoration : none;
+font-size: 12px;
+line-height: 5px;
+}
+#posPage {
+	width: 78%;
+	margin: 0;
+	float: left;
+	background-color: #FBFBFB;	
+	position: absolute;
+	margin-left: 10%;
+	margin-right: 10%;		
+	margin-top: 1%;
+	margin-bottom: 1%;
+	min-width: 400px;
+	z-index: 3;	
+}
+#posBase {	
+	height: 90%;
+	width: 76%;
+	float: right;
+	background-color: #FFF;
+	z-index: 3;
+}
+#posMenu {
+    height: 90%;
+	width: 22%;
+	float: left;
+	background-color: #FFF;	
+	z-index: 3;
+}
+#posPort {	
+	background: #FFFFFF;	
+	text-align: center;	
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+#posPort h1 {
+	margin: 1px;	
+	font-family: Georgia;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #522B2B;	
+}
+#posPort h2 {
+	margin: 1px;	
+	font-family: Georgia;
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	color: #522B2B;	
+}
+#posPort h3 {
+	margin: 1px;	
+	font-family: Georgia;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	color: #111111;	
+}
+#posLogin {		
+	background-color: #4096EE;
+	margin: 0;
+	padding: 0;		
+	}
+#posDirect {
+	height: 25%;	
+	background-color: #85C329;
+	margin: 0;
+	padding: 0;
+	}
+#posNews {
+	height: 25%;	
+	background-color: #de7a00;
+	margin: 0;
+	padding: 0;	
+	}
+#posFooter {
+	position:fixed;
+	right:0; /*horizontally center bar in window*/
+	left:0; /*horizontally center bar in window*/
+	/* visibility:hidden; */
+	width:78%; /*set width of bar to width of entire window*/
+	background-color: #CCD3E6;
+	left: 10%;
+	right: 12%;
+	border-radius: 20px;	
+}
+div#video-header {
+height : 683px;
+margin : -1px 0 0;
+}

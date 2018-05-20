@@ -27,7 +27,7 @@ public class MyController {
 	@RequestMapping("/hello2")
 	public List<Student> sayHello2() {
 		List<Student> l1=new ArrayList<>();
-		l1.add(new Student("s01","nabanita","Deb"));
+		l1.add(new Student("s01","naba","Deb"));
 		l1.add(new Student("s02","Ashim","Kol"));
 		l1.add(new Student("s03","Apu","Deb"));
 		l1.add(new Student("s04","Roni","KNJ"));
